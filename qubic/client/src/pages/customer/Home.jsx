@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { API_BASE_URL } from '../../config';
 
 const CustomerHome = () => {
     const navigate = useNavigate();
@@ -15,7 +16,7 @@ const CustomerHome = () => {
         }
 
         // Fetch wallet
-        fetch(`http://localhost:3001/api/customer/${customerId}`)
+        fetch(`${API_BASE_URL}/customer/${customerId}`)
             .then(res => {
                 if (!res.ok) {
                     throw new Error('Invalid user');

@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { API_BASE_URL } from '../config';
 
 const CreatePayment = () => {
     const [amount, setAmount] = useState('');
@@ -19,7 +20,7 @@ const CreatePayment = () => {
         }
 
         try {
-            const response = await fetch('http://localhost:3001/api/payments', {
+            const response = await fetch(`${API_BASE_URL}/payments`, {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({ merchantId, amount: parseFloat(amount), asset, description })

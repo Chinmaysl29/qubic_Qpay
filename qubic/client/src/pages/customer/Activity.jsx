@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { API_BASE_URL } from '../../config';
 
 const Activity = () => {
     const [history, setHistory] = useState([]);
@@ -6,7 +7,7 @@ const Activity = () => {
 
     useEffect(() => {
         if (!customerId) return;
-        fetch(`http://localhost:3001/api/customer/${customerId}/history`)
+        fetch(`${API_BASE_URL}/customer/${customerId}/history`)
             .then(res => res.json())
             .then(data => setHistory(data));
     }, [customerId]);

@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { API_BASE_URL } from '../../config';
 
 const CustomerLogin = () => {
     const [name, setName] = useState('');
@@ -19,7 +20,7 @@ const CustomerLogin = () => {
 
         try {
             console.log('Sending login request for:', trimmedName);
-            const res = await fetch('http://localhost:3001/api/customer/login', {
+            const res = await fetch(`${API_BASE_URL}/customer/login`, {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({ name: trimmedName })
@@ -39,7 +40,7 @@ const CustomerLogin = () => {
             }
         } catch (err) {
             console.error('Login network error:', err);
-            alert('Login Failed: Network Error. Ensure server is running on localhost:3001. Details: ' + err.message);
+            alert('Login Failed: Network Error. Ensure server is running. Details: ' + err.message);
         }
     };
 

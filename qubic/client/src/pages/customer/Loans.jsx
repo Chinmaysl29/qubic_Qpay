@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { API_BASE_URL } from '../../config';
 
 const CustomerLoans = () => {
     const [limit, setLimit] = useState(0);
@@ -16,7 +17,7 @@ const CustomerLoans = () => {
     const customerId = localStorage.getItem('customerId');
 
     const fetchInfo = () => {
-        fetch(`http://localhost:3001/api/customer/${customerId}`)
+        fetch(`${API_BASE_URL}/customer/${customerId}`)
             .then(res => res.json())
             .then(data => {
                 setLimit(data.credit_limit);
@@ -24,7 +25,7 @@ const CustomerLoans = () => {
                 setAccountStatus(data.status || 'ACTIVE');
             });
 
-        fetch(`http://localhost:3001/api/customer/${customerId}/history`)
+        fetch(`${API_BASE_URL}/customer/${customerId}/history`)
             .then(res => res.json())
             .then(data => setLoans(data.filter(i => i.type === 'LOAN' && i.status === 'ACTIVE')));
     };
@@ -43,7 +44,7 @@ const CustomerLoans = () => {
     const handleApply = async () => {
         setProcessing(true);
         try {
-            const res = await fetch('http://localhost:3001/api/loans/apply', {
+            const res = await fetch(`${API_BASE_URL}/loans/apply`, {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({ customerId, amount: parseInt(amount), duration })
@@ -66,7 +67,7 @@ const CustomerLoans = () => {
         if (!payModal) return;
         setProcessing(true);
         try {
-            const res = await fetch('http://localhost:3001/api/loans/repay', {
+            const res = await fetch(`${API_BASE_URL}/loans/repay`, {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({ customerId, loanId: payModal.id, cardDetails: cardNum })

@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
+import { API_BASE_URL } from '../config';
 
 const PaymentPage = () => {
     const { id } = useParams();
@@ -25,7 +26,7 @@ const PaymentPage = () => {
             }
 
             try {
-                const response = await fetch(`http://localhost:3001/api/payments/${id}`);
+                const response = await fetch(`${API_BASE_URL}/payments/${id}`);
                 const data = await response.json();
 
                 if (response.ok) {
@@ -70,7 +71,7 @@ const PaymentPage = () => {
             // Get logged in user if available
             const customerId = localStorage.getItem('customerId');
 
-            const res = await fetch(`http://localhost:3001/api/payments/${payment.id}/pay`, {
+            const res = await fetch(`${API_BASE_URL}/payments/${payment.id}/pay`, {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({ customerId })

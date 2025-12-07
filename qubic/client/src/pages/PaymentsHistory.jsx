@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
+import { API_BASE_URL } from '../config';
 
 const PaymentsHistory = () => {
     const [payments, setPayments] = useState([]);
@@ -9,7 +10,7 @@ const PaymentsHistory = () => {
     const fetchPayments = async () => {
         if (!merchantId) return;
         try {
-            const res = await fetch(`http://localhost:3001/api/payments?merchantId=${merchantId}`);
+            const res = await fetch(`${API_BASE_URL}/payments?merchantId=${merchantId}`);
             if (res.ok) {
                 const data = await res.json();
                 setPayments(data);

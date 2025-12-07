@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { API_BASE_URL } from '../config';
 
 const Dashboard = () => {
     const [stats, setStats] = useState({
@@ -21,7 +22,7 @@ const Dashboard = () => {
 
         const fetchStats = async () => {
             try {
-                const res = await fetch(`http://localhost:3001/api/payments?merchantId=${merchantId}`);
+                const res = await fetch(`${API_BASE_URL}/payments?merchantId=${merchantId}`);
                 if (!res.ok) throw new Error('Failed to fetch payments');
 
                 const data = await res.json();
