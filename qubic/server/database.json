@@ -1,0 +1,163 @@
+{
+  "merchants": [
+    {
+      "id": "3339a3dc-3881-4747-9822-09f6fecd9ed7",
+      "name": "srujan",
+      "createdAt": "2025-12-07T12:11:39.523Z"
+    },
+    {
+      "id": "389af327-722a-4829-b522-4bfd7b5e0d4f",
+      "name": "srb",
+      "createdAt": "2025-12-07T12:32:23.298Z"
+    },
+    {
+      "id": "76ad054e-2b8c-4dee-b0f9-2c3ba6204ee5",
+      "name": "thejus",
+      "createdAt": "2025-12-07T14:41:50.460Z"
+    }
+  ],
+  "payments": [
+    {
+      "id": "P-2025-0001",
+      "merchant_id": "389af327-722a-4829-b522-4bfd7b5e0d4f",
+      "amount": 15,
+      "asset": "QUBIC",
+      "description": "",
+      "status": "PAID",
+      "createdAt": "2025-12-07T12:32:34.146Z",
+      "paidAt": "2025-12-07T12:47:01.845Z",
+      "receiptId": "9a4af68dcfa6bf1cf48eae84fcdf2115fec12de3ef33482e23d626e3da2b6ab4"
+    },
+    {
+      "id": "P-2025-0002",
+      "merchant_id": "389af327-722a-4829-b522-4bfd7b5e0d4f",
+      "amount": 20,
+      "asset": "QUBIC",
+      "description": "coffetea\n",
+      "status": "PENDING",
+      "createdAt": "2025-12-07T12:45:36.267Z",
+      "paidAt": null
+    },
+    {
+      "id": "P-2025-0003",
+      "merchant_id": "3339a3dc-3881-4747-9822-09f6fecd9ed7",
+      "amount": 100,
+      "asset": "QUBIC",
+      "description": "Test History",
+      "status": "PAID",
+      "createdAt": "2025-12-07T12:54:34.867Z",
+      "paidAt": "2025-12-07T12:57:27.831Z",
+      "receiptId": "4bc08f7635efb7b6d71da5dbe4975824500e698359732181e255fde651f4198b",
+      "paidBy": "cust-demo-001"
+    },
+    {
+      "id": "P-2025-0004",
+      "merchant_id": "389af327-722a-4829-b522-4bfd7b5e0d4f",
+      "amount": 5,
+      "asset": "QUBIC",
+      "description": "",
+      "status": "PENDING",
+      "createdAt": "2025-12-07T12:59:46.139Z",
+      "paidAt": null
+    },
+    {
+      "id": "P-2025-0005",
+      "merchant_id": "389af327-722a-4829-b522-4bfd7b5e0d4f",
+      "amount": 5,
+      "asset": "QUBIC",
+      "description": "nkn",
+      "status": "PENDING",
+      "createdAt": "2025-12-07T12:59:58.268Z",
+      "paidAt": null
+    },
+    {
+      "id": "P-2025-0006",
+      "merchant_id": "3339a3dc-3881-4747-9822-09f6fecd9ed7",
+      "amount": 25,
+      "asset": "QUBIC",
+      "description": "id324",
+      "status": "PAID",
+      "createdAt": "2025-12-07T14:14:45.418Z",
+      "paidAt": "2025-12-07T15:26:12.447Z",
+      "receiptId": "00eecde097d438b005c8fee377f7d0ccff15e46fa163f05e8163324f0158e184",
+      "paidBy": "cust-f03f92ff"
+    }
+  ],
+  "customers": [
+    {
+      "id": "cust-demo-001",
+      "name": "Demo User",
+      "walletAddress": "QUBIC-ED2D9133",
+      "balance_qubic": 1900,
+      "credit_limit": 5000,
+      "createdAt": "2025-12-06T19:49:38.095Z",
+      "status": "ACTIVE",
+      "total_debt_qubic": 525,
+      "last_repayment_date": "2025-12-07T14:55:55.777Z"
+    },
+    {
+      "id": "cust-f03f92ff",
+      "name": "THEJUS",
+      "walletAddress": "QUBIC-33293679",
+      "balance_qubic": 1475,
+      "credit_limit": 5000,
+      "createdAt": "2025-12-07T15:07:42.127Z",
+      "status": "ACTIVE",
+      "total_debt_qubic": 0,
+      "last_repayment_date": "2025-12-07T15:22:45.650Z"
+    }
+  ],
+  "loans": [
+    {
+      "id": "LOAN-DB478E8F",
+      "customerId": "cust-demo-001",
+      "amount_principal": 500,
+      "amount_interest": 25,
+      "total_repay_qubic": 525,
+      "total_repay_usd": "52.50",
+      "duration": 7,
+      "due_date": "2025-12-14T12:28:19.044Z",
+      "status": "ACTIVE",
+      "createdAt": "2025-12-07T12:28:19.045Z"
+    },
+    {
+      "id": "LOAN-F89FEF47",
+      "customerId": "cust-demo-001",
+      "amount_principal": 400,
+      "amount_interest": 20,
+      "total_repay_qubic": 420,
+      "total_repay_usd": "42.00",
+      "duration": 7,
+      "due_date": "2025-12-14T14:16:47.802Z",
+      "status": "PAID",
+      "createdAt": "2025-12-07T14:16:47.803Z",
+      "paidAt": "2025-12-07T14:55:55.777Z"
+    },
+    {
+      "id": "LOAN-61CA5A73",
+      "customerId": "cust-f03f92ff",
+      "amount_principal": 500,
+      "amount_interest": 25,
+      "total_repay_qubic": 525,
+      "total_repay_usd": "52.50",
+      "duration": 7,
+      "due_date": "2025-12-14T15:09:00.438Z",
+      "status": "PAID",
+      "createdAt": "2025-12-07T15:09:00.438Z",
+      "paidAt": "2025-12-07T15:10:02.624Z"
+    },
+    {
+      "id": "LOAN-3B68725C",
+      "customerId": "cust-f03f92ff",
+      "amount_principal": 500,
+      "amount_interest": 25,
+      "total_repay_qubic": 525,
+      "total_repay_usd": "52.50",
+      "duration": 7,
+      "due_date": "2025-12-14T15:13:28.352Z",
+      "status": "PAID",
+      "createdAt": "2025-12-07T15:13:28.352Z",
+      "paidAt": "2025-12-07T15:22:45.650Z"
+    }
+  ]
+}
